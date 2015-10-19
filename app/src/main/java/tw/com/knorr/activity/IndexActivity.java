@@ -11,7 +11,7 @@ import tw.com.knorr.fragment.IndexFragment;
 import tw.com.knorr.fragment.LaunchFragment;
 import tw.com.knorr.main.BaseActivity;
 
-public class MainActivity extends BaseActivity implements IMainActivityView{
+public class IndexActivity extends BaseActivity implements IMainActivityView{
     private MainActivityPresenter presenter;
     private FragmentManager fm;
     private LaunchFragment launchFragment;
