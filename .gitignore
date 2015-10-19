@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#AndroidStudio
 .gradle
 /local.properties
 /.idea/workspace.xml
@@ -6,7 +6,8 @@
 .DS_Store
 /build
 /captures
-=======
+
+#GitHub
 # Built application files
 *.apk
 *.ap_
@@ -34,4 +35,3 @@ proguard/
 
 # Log Files
 *.log
->>>>>>> 65295b8f55d7db775540c326009003fefe67c294
