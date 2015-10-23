@@ -1,10 +1,5 @@
 package tw.com.knorr.activity.presenter;
 
-import com.tony.volleydemo.http.core.Listener;
-import com.tony.volleydemo.http.core.VolleyError;
-
-import org.json.JSONObject;
-
 import tw.com.knorr.activity.model.IMainActivityModel;
 import tw.com.knorr.activity.model.impl.MainActivityModel;
 import tw.com.knorr.activity.view.IMainActivityView;
@@ -13,56 +8,32 @@ import tw.com.knorr.activity.view.IMainActivityView;
  * Created by user on 10/15/15.
  */
 public class MainActivityPresenter {
-    private IMainActivityModel mainActivityModel;
     private IMainActivityView mainActivityView;
+    private IMainActivityModel mainActivityModel;
 
     public MainActivityPresenter() {
         this(new MainActivityModel());
     }
 
-    public MainActivityPresenter(IMainActivityModel model) {
-        this.mainActivityModel = model;
+    public MainActivityPresenter(IMainActivityModel mainActivityModel) {
+        this.mainActivityModel = mainActivityModel;
     }
 
-    public void setView(IMainActivityView view){
-        this.mainActivityView = view;
-    }
-
-    public IMainActivityView getView(){
+    public IMainActivityView getMainActivityView() {
         return mainActivityView;
     }
 
+    public void setMainActivityView(IMainActivityView mainActivityView) {
+        this.mainActivityView = mainActivityView;
+    }
+
     /**
-     * 检测更新
+     * 设置选择的tab
+     * @param tab
      */
-    public void checkUpdate(){
-        if (mainActivityModel != null){
-            mainActivityModel.checkUpdate(new Listener<JSONObject>() {
-                @Override
-                public void onSuccess(JSONObject jsonObject) {
-                    mainActivityView.intoIndexFragment();
-                }
-
-                @Override
-                public void onError(VolleyError error) {
-                    super.onError(error);
-                }
-
-                @Override
-                public void onFinish() {
-                    super.onFinish();
-                }
-            });
-        }
-    }
-
-    public boolean isNeedUpdate(){
-        return false;
-    }
-
-    public void destroy(){
+    public void setTab(int tab){
         if (mainActivityModel!=null){
-            mainActivityModel.destroy();
+            mainActivityView.setSelectedTab(tab);
         }
     }
 }

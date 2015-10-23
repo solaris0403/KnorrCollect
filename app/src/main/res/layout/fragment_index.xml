@@ -1,13 +1,85 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="tw.com.knorr.fragment.IndexFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/img_index_banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Index" />
+        android:scaleType="centerCrop"
+        android:layout_above="@+id/lyt_index"
+        android:background="#252525" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/lyt_index"
+        android:layout_width="match_parent"
+        android:layout_height="216dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_index_scan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffff00"
+                android:text="Scan" />
+
+            <Button
+                android:id="@+id/btn_index_news"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff0000"
+                android:text="News" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_index_activity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#123456"
+                android:text="Activity" />
+
+            <Button
+                android:id="@+id/btn_index_account"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#198756"
+                android:text="Account" />
+
+            <Button
+                android:id="@+id/btn_index_redeem"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#456325"
+                android:text="Redeem" />
+
+            <Button
+                android:id="@+id/btn_index_cookbook"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#785532"
+                android:text="Cookbook" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

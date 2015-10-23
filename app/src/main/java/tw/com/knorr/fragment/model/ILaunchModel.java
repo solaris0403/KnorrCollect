@@ -8,4 +8,5 @@ import com.tony.volleydemo.http.core.Listener;
 public interface ILaunchModel {
     public void checkUpdate(Listener listener);
     public void pushGCMRegisterId(Listener listener);
+    public void destroy();
 }

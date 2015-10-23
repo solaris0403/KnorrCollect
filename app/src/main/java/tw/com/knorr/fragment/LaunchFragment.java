@@ -2,10 +2,13 @@ package tw.com.knorr.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import android.os.Handler;
 
 import tw.com.knorr.R;
 import tw.com.knorr.activity.IndexActivity;
@@ -17,7 +20,12 @@ import tw.com.knorr.fragment.view.ILaunchView;
  */
 public class LaunchFragment extends Fragment implements ILaunchView {
     private LaunchPresenter launchPresenter;
-
+    private static Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +40,9 @@ public class LaunchFragment extends Fragment implements ILaunchView {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        showProgress();
         launchPresenter.setLaunchView(this);
         launchPresenter.checkUpdate();
+        showProgress();
     }
 
     /**
