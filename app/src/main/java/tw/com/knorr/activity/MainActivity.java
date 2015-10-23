@@ -20,7 +20,7 @@ import tw.com.knorr.fragment.CaptureFragment;
 import tw.com.knorr.main.BaseActivity;
 
 /**
- * Created by user on 10/20/15.
+ * TAB界面
  */
 public class MainActivity extends BaseActivity implements IMainActivityView, View.OnClickListener {
     private MainActivityPresenter presenter;
@@ -84,6 +84,11 @@ public class MainActivity extends BaseActivity implements IMainActivityView, Vie
 
         //title
         mTxtTitle.setText(mTitles[tabIndex]);
+        if (0 == tabIndex){
+            mTxtTitle.setVisibility(View.GONE);
+        }else{
+            mTxtTitle.setVisibility(View.VISIBLE);
+        }
 
         mCurrentTabIndex = tabIndex;
     }
