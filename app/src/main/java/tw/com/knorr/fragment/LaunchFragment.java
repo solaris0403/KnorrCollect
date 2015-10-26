@@ -1,17 +1,14 @@
 package tw.com.knorr.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.os.Handler;
-
 import tw.com.knorr.R;
-import tw.com.knorr.activity.IndexActivity;
 import tw.com.knorr.fragment.presenter.LaunchPresenter;
 import tw.com.knorr.fragment.view.ILaunchView;
 
@@ -60,8 +57,8 @@ public class LaunchFragment extends Fragment implements ILaunchView {
     @Override
     public void intoMainView() {
         //进入主界面
-        Intent intent = new Intent(this.getActivity(), IndexActivity.class);
-        startActivity(intent);
-        this.getActivity().finish();
+//        Intent intent = new Intent(this.getActivity(), IndexActivity.class);
+//        startActivity(intent);
+//        this.getActivity().finish();
     }
 }
